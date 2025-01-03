@@ -1,0 +1,97 @@
+body {
+    font-family: 'Monaco', monospace;
+    background: linear-gradient(135deg, #f9f9f9, #e3f4fc);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+	background: url('image/2.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.container {
+    width: 360px;
+    background: #e84040;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(88, 48, 48, 0.1);
+    overflow: hidden;
+}
+
+.form-container {
+    padding: 20px;
+    text-align: center;
+}
+
+.toggle-container {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.toggle-btn {
+    flex: 1;
+    padding: 10px 0;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    background: #ef8484;
+    transition: background 0.3s;
+}
+
+.toggle-btn.active {
+    background: #7098d5;
+    color: rgb(167, 60, 60);
+}
+
+.form {
+    display: none;
+}
+
+.form.active {
+    display: block;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #0d6efd;
+}
+
+.submit-btn {
+    width: 90%;
+    padding: 10px;
+    background: #98b9ec;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.submit-btn:hover {
+    background: #4d5d75;
+}
+
+p {
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.switch {
+    color: #0d6efd;
+    cursor: pointer;
+    text-decoration: underline;
+}
