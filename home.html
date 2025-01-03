@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lost and Found</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Lost and Found Logo">
+      <h1>Lost and Found</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#" id="home">Home</a></li>
+        <li><a href="#" id="report">Item Report</a></li>
+        <li><a href="#" id="profile">Profile</a></li>
+        <li class="notification">
+          <a href="#" id="notifications">Notifications</a>
+          <div class="dropdown">
+            <ul id="notification-list">
+              <!-- Notifications will be dynamically added here -->
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="lost">
+      <h2>Lost Items</h2>
+      <div class="item-list">
+        <!-- Dynamic Lost Items will be loaded here -->
+      </div>
+    </section>
+    <section class="found">
+      <h2>Found Items</h2>
+      <div class="item-list">
+        <!-- Dynamic Found Items will be loaded here -->
+      </div>
+    </section>
+  </main>
+  <script src="scripts.js"></script>
+</body>
+</html>
