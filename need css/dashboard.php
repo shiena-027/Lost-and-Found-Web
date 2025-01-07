@@ -40,6 +40,7 @@ $user = mysqli_fetch_assoc($result);
                 <li><a href="about.php">About Us</a></li>
                 <li><a href="inquiry.php">Contact Us</a></li>
                 <li><a href="terms.php">Terms & Privacy Policy</a></li>
+                 <li><a href="profile.php">Profile</a></li>
                 <li><a href="logout.php">Logout</a></li>
             </ul>
         </nav>
