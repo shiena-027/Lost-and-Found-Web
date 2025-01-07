@@ -65,71 +65,7 @@ if (isset($_GET['user_id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat</title>
-    <style>
-        /* Basic chat styling */
-        .chat-container {
-            display: flex;
-            max-width: 1000px;
-            margin: auto;
-        }
-        .user-list {
-            width: 30%;
-            padding: 20px;
-            border-right: 1px solid #ccc;
-        }
-        .user-list a {
-            display: block;
-            padding: 10px;
-            margin-bottom: 10px;
-            text-decoration: none;
-            color: #256EBB;
-            border-radius: 5px;
-            background-color: #f1f1f1;
-        }
-        .user-list a:hover {
-            background-color: #ddd;
-        }
-        .chat-box {
-            width: 70%;
-            padding: 20px;
-            overflow-y: auto;
-            border-left: 1px solid #ccc;
-        }
-        .messages {
-            height: 400px;
-            overflow-y: scroll;
-            margin-bottom: 20px;
-            padding-right: 10px;
-        }
-        .message {
-            padding: 10px;
-            margin: 5px 0;
-            border-radius: 5px;
-            background-color: #f1f1f1;
-        }
-        .message.sent {
-            background-color: #d3f8d3;
-            text-align: right;
-        }
-        .message.received {
-            background-color: #f1f1f1;
-            text-align: left;
-        }
-        .message-form input[type="text"] {
-            width: 80%;
-            padding: 10px;
-            margin-right: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .message-form button {
-            padding: 10px;
-            background-color: #256EBB;
-            color: white;
-            border: none;
-            border-radius: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="chat-container">
