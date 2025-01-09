@@ -94,9 +94,7 @@ if (isset($_POST['submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Post Item - Lost and Found</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <style>
-        #map { height: 400px; }
-    </style>
+    <link rel="stylesheet" href="post_item-style.css">
 </head>
 <body>
     <h2>Post Item</h2>
