@@ -90,51 +90,7 @@ $longitude = !empty($item['longitude']) ? $item['longitude'] : 120.9842; // Defa
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Item</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <style>
-        /* Map Container Style */
-        #map {
-            height: 400px;
-            width: 100%;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            margin-top: 10px;
-        }
-
-        /* General Form Styles */
-        form {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-        }
-
-        label {
-            font-weight: bold;
-        }
-
-        input[type="text"], textarea, select, input[type="file"] {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-    </style>
+    <link rel="stylesheet" href="edit_item-style.css">
 </head>
 <body>
     <h2>Edit Item</h2>
