@@ -1,16 +1,36 @@
+
+<?php
+session_start();
+include('includes/db.php');
+
+// Ensure the user is logged in
+if (!isset($_SESSION['user'])) {
+    header('Location: auth.php');
+    exit();
+}
+
+$user = $_SESSION['user']; // Get user ID from session
+
+// Fetch user information from the database (optional)
+$query = "SELECT * FROM users WHERE id = '$user'";
+$result = mysqli_query($conn, $query);
+$user = mysqli_fetch_assoc($result);
+?>
+
 <?php include('navbar.php'); ?>
+<?php include('sidenav.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms & Privacy Policy</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/tos.css">
 </head>
 <body>
     <div class="container">
         <h1>Terms and Privacy Policy</h1>
-
         <section>
             <h2>1. Terms of Service</h2>
             <p>By using our Lost and Found website, you agree to the following terms:</p>
@@ -51,6 +71,7 @@
         </section>
     </div>
 
-    <?php include('footer.php'); ?>
+
+
 </body>
 </html>

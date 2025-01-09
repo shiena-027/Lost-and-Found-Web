@@ -132,6 +132,7 @@ if (isset($_GET['user_id'])) {
     </style>
 </head>
 <body>
+<?php require_once(__DIR__.'/sidenav.php'); ?>
     <div class="chat-container">
         <!-- User List -->
         <div class="user-list">

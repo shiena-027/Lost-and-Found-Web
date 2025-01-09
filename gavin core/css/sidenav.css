@@ -28,8 +28,10 @@
 
 
   .logout a{
-    padding: 100% 8px 8px 150px;
     bottom: 0;
+    text-align: right;
+    margin-top: 100%;
+    padding: 10px;
   }
   
   /* When you mouse over the navigation links, change their color */
@@ -44,17 +46,9 @@
     margin-left: 50px;
   }
   
-  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-  #main {
-    transition: margin-left .5s;
-  }
-  
-  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-  @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-  }
 
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+ 
 .navdiv{
     margin: 0;
 }
@@ -91,4 +85,61 @@
 
 .navdiv span:hover:not(.active) {
     background-color: #296dff;
+}
+
+.footerdiv{
+  margin: 0;
+}
+
+.footerlist {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #4b84ff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+}
+
+.footeritem {
+  display: inline-block;
+  text-align: center;
+  min-width: 70px;
+  list-style: none;
+  
+}
+
+.footeritem a {
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  margin-left: 15px;
+  margin-right: 15px;
+  text-decoration: none;
+  display: inline-block;
+  border: 1px;
+}
+
+.footeritem a:hover:not(.active) {
+  background-color: #2f62d1;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+@media (min-width:500px) {
+  .footerlist {
+    top: 0;
+    bottom: auto;
+    right: 0;
+    left: auto;
+    width: auto;
+}
+.footeritem {
+    float: right;
+}
 }

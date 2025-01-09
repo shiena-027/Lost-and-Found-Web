@@ -3,19 +3,32 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Lost & Found Platform</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
+
 <body>
-    <h1>Welcome to the Lost & Found Platform</h1>
-    <p>Your go-to platform for finding lost or found items.</p>
-    <nav>
-        <a href="faq.php">FAQ</a>
-        <a href="about.php">About Us</a>
-        <a href="contact.php">Contact</a>
-        <a href="auth.php">Login</a>
-    </nav>
+    <div>
+        <ul class="navbar">
+            <img src="css/img/logo.png">
+            <li class="navitem"><a href="faq.php">FAQ</a></li>
+            <li class="navitem"><a href="about.php">About Us</a></li>
+            <li class="navitem"><a href="contact.php">Contact Us</a></li>
+
+        </ul>
+    </div>
+    <div class="maincontainer">
+        <div>
+            <span class="maintitle">Welcome to Lost & Found Platform!</span></br>
+            <span class="mainsub">Your go-to platform for finding lost or found items.</span><br>
+            <button><a href="auth.php">Come Join Us!</a></button>
+        </div>
+
+
+    </div>
 </body>
+
 </html>

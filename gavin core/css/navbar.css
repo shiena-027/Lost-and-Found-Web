@@ -34,5 +34,18 @@
 }
 
 .footeritem a:hover:not(.active) {
-    background-color: #ffffff;
+    background-color: #2f62d1;
+}
+
+@media (min-width:500px) {
+    .footerlist {
+        top: 0;
+        bottom: auto;
+        right: 0;
+        left: auto;
+        width: auto;
+    }
+    .footeritem {
+        float: right;
+    }
 }

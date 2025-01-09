@@ -87,14 +87,15 @@ if (isset($_POST['login'])) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login/Register</title>
-    <link rel="stylesheet" href="assets/css/styles.css"> <!-- Your CSS file -->
+    <link rel="stylesheet" href="css/auth.css"> <!-- Your CSS file -->
     <script>
         function toggleForms(form) {
-            if(form === 'login') {
+            if (form === 'login') {
                 document.getElementById('login-form').style.display = 'block';
                 document.getElementById('register-form').style.display = 'none';
             } else {
@@ -104,36 +105,46 @@ if (isset($_POST['login'])) {
         }
     </script>
 </head>
+
 <body>
 
     <div class="auth-container">
         <div class="auth-buttons">
-            <button onclick="toggleForms('login')">Login</button>
-            <button onclick="toggleForms('register')">Register</button>
         </div>
 
         <!-- Login Form -->
         <div id="login-form" class="auth-form" style="display: block;">
-            <h2>Login</h2>
+            <h2>LOGIN</h2>
             <form action="auth.php" method="POST">
-                <input type="email" name="email" placeholder="Enter your email" required><br>
-                <input type="password" name="password" placeholder="Enter your password" required><br>
-                <button type="submit" name="login">Login</button>
+                <div class="auth-text">
+                    <input type="email" name="email" placeholder="Enter your email" required><br>
+                    <input type="password" name="password" placeholder="Enter your password" required><br>
+                    <button type="submit" name="login">Login</button>
+                </div>
             </form>
+            <div class="divspace">
+                <span>Dont have an account?</span>
+                <a onclick="toggleForms('register')" style="color: blue;"><u>Register</u></a>
+            </div>
+
         </div>
 
         <!-- Registration Form -->
         <div id="register-form" class="auth-form" style="display: none;">
-            <h2>Register</h2>
+            <h2>REGISTER</h2>
             <form action="auth.php" method="POST">
-                <input type="text" name="name" placeholder="Enter your full name" required><br>
-                <input type="email" name="email" placeholder="Enter your email" required><br>
-                <input type="password" name="password" placeholder="Create a password" required><br>
-                <input type="password" name="confirm_password" placeholder="Confirm password" required><br>
-                <button type="submit" name="register">Register</button>
+                <div class="auth-text">
+                    <input type="text" name="name" placeholder="Enter your full name" required><br>
+                    <input type="email" name="email" placeholder="Enter your email" required><br>
+                    <input type="password" name="password" placeholder="Create a password" required><br>
+                    <input type="password" name="confirm_password" placeholder="Confirm password" required><br>
+                    <button type="submit" name="register">Register</button><br>
+                </div>
+                <button onclick="toggleForms('login')" class="logbutt"><img src="css/img/arrow_back.svg"></button>
             </form>
         </div>
     </div>
 
 </body>
+
 </html>
