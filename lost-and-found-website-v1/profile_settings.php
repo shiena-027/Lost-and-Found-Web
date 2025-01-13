@@ -4,14 +4,6 @@ if (!isset($_SESSION['user_id'])) {
     die("Access denied. Please log in first.");
 }
 
-// Include PHPMailer
-require 'assets/PHPMailer/src/Exception.php';
-require 'assets/PHPMailer/src/PHPMailer.php';
-require 'assets/PHPMailer/src/SMTP.php';
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
 include('includes/db.php');
 
 if ($conn->connect_error) {
@@ -22,14 +14,14 @@ $user_id = $_SESSION['user_id'];
 $photo = 'assets/img/user.png';
 
 // Fetch the current profile picture from the database
-$query = "SELECT photo FROM users WHERE id = ?";
+$query = "SELECT photo, name FROM users WHERE id = ?";
 $stmt = $conn->prepare($query);
 $stmt->bind_param("i", $user_id);
 $stmt->execute();
-$stmt->store_result(); 
-$stmt->bind_result($db_picture);
+$stmt->store_result();
+$stmt->bind_result($db_picture, $name);
 if ($stmt->fetch() && $db_picture) {
-    $photo = $db_picture; 
+    $photo = $db_picture;
 }
 $stmt->close();
 
@@ -64,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['photo'])) {
 
 // Handle profile updates
 if (isset($_POST['update_profile'])) {
-    $user_id = $_SESSION['user_id']; 
+    $user_id = $_SESSION['user_id'];
 
     // Update name
     if (!empty($_POST['name'])) {
@@ -76,46 +68,18 @@ if (isset($_POST['update_profile'])) {
         $stmt->close();
     }
 
-    // Update email with verification
+    // Update email
     if (!empty($_POST['email'])) {
         $email = $_POST['email'];
-
-        // Generate verification code
-        $verification_code = rand(100000, 999999);
-        $query = "UPDATE users SET email_verification_code = ?, email_verification_expiration = ?, email = ? WHERE id = ?";
-        $expiration_time = date("Y-m-d H:i:s", strtotime("+15 minutes"));
+        $query = "UPDATE users SET email = ? WHERE id = ?";
         $stmt = $conn->prepare($query);
-        $stmt->bind_param("sssi", $verification_code, $expiration_time, $email, $user_id);
+        $stmt->bind_param("si", $email, $user_id);
         $stmt->execute();
         $stmt->close();
-
-        // Send email verification code
-        try {
-            $mail = new PHPMailer(true);
-            $mail->isSMTP();
-            $mail->Host = 'smtp.gmail.com';
-            $mail->SMTPAuth = true;
-            $mail->Username = 'jnm.cmp@gmail.com';
-            $mail->Password = 'uqtizyeiyfqyinis';
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-            $mail->Port = 587;
-
-            $mail->setFrom('jnm.cmp@gmail.com', 'Profile Update');
-            $mail->addAddress($email);
-            $mail->isHTML(true);
-            $mail->Subject = 'Email Verification Code';
-            $mail->Body = 'Your verification code is: <strong>' . $verification_code . '</strong>';
-
-            $mail->send();
-        } catch (Exception $e) {
-            error_log('Mailer Error: ' . $mail->ErrorInfo);
-            $_SESSION['error'] = 'Failed to send verification email.';
-        }
     }
 
     // Update password
     if (!empty($_POST['new_password'])) {
-        // Old password is required if new password is entered
         if (empty($_POST['old_password'])) {
             $_SESSION['error'] = 'Old password is required if changing the password.';
         } else {
@@ -126,7 +90,7 @@ if (isset($_POST['update_profile'])) {
             $stmt = $conn->prepare($query);
             $stmt->bind_param("i", $user_id);
             $stmt->execute();
-            $stmt->store_result(); 
+            $stmt->store_result();
             $stmt->bind_result($hashed_password);
             $stmt->fetch();
 
@@ -148,20 +112,6 @@ if (isset($_POST['update_profile'])) {
     }
 }
 
-// Fetch user's name
-$query = "SELECT name FROM users WHERE id = ?";
-$stmt = $conn->prepare($query);
-$stmt->bind_param("i", $user_id);
-$stmt->execute();
-$stmt->store_result(); 
-$stmt->bind_result($name); 
-
-if ($stmt->fetch()) {
-    $display_name = $name;
-} else {
-    $display_name = "Guest"; 
-}
-$stmt->close();
 $conn->close();
 ?>
 
@@ -173,74 +123,11 @@ $conn->close();
     <title>Profile Settings</title>
     <link rel="stylesheet" href="assets/profile_settings.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <style>
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgb(0, 0, 0);
-            background-color: rgba(0, 0, 0, 0.4);
-            padding-top: 60px;
-        }
-        
-        .modal-content {
-            background-color: white;
-            margin: 5% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 400px;
-            border-radius: 10px;
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            font-size: 20px;
-        }
-
-        .modal-body {
-            padding: 20px;
-            text-align: center;
-        }
-
-        .modal-close {
-            font-size: 20px;
-            color: #aaa;
-            cursor: pointer;
-        }
-
-        .modal-close:hover,
-        .modal-close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .error {
-            background-color: #a72e2e;
-            color: white;
-        }
-
-        .success {
-            background-color: #b2e8b2;
-            color: white;
-        }
-
-    </style>
 </head>
 
 <?php include('web_navbar.php'); ?>
 
 <body>
-
     <!-- Success Modal -->
     <?php if (isset($_SESSION['message'])): ?>
         <div class="modal success" id="successModal">
@@ -276,10 +163,10 @@ $conn->close();
         <div style="text-align: center; margin-bottom: 20px;">
             <img src="<?php echo htmlspecialchars($photo); ?>" alt="Profile Picture">
         </div>
-        <h1><?php echo htmlspecialchars($display_name); ?></h1>
+        <h1><?php echo htmlspecialchars($name); ?></h1>
 
         <label for="name">Edit Name:</label>
-        <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($display_name); ?>">
+        <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($name); ?>">
 
         <label for="email">Edit Email:</label>
         <input type="email" id="email" name="email" value="">
@@ -297,7 +184,6 @@ $conn->close();
         <button type="button" onclick="window.history.back()">Cancel</button>
     </form>
 
-
     <script>
         function closeModal(modalId) {
             document.getElementById(modalId).style.display = 'none';
@@ -305,4 +191,7 @@ $conn->close();
     </script>
 
 </body>
+
+<?php include 'includes/footer.php'; ?>
+
 </html>
