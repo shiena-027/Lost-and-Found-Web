@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 include('includes/db.php');
 
@@ -57,6 +58,7 @@ if (isset($_GET['user_id'])) {
         }
     }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -66,14 +68,46 @@ if (isset($_GET['user_id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat</title>
     <link rel="stylesheet" href="chat-style.css">
+    <script>
+        function searchChat() {
+            const searchQuery = document.getElementById("search-input").value.toLowerCase();
+            const userLinks = document.querySelectorAll(".user-list a");
+            const messages = document.querySelectorAll(".message");
+
+            // Filter users
+            userLinks.forEach(link => {
+                if (link.textContent.toLowerCase().includes(searchQuery)) {
+                    link.style.display = "block";
+                } else {
+                    link.style.display = "none";
+                }
+            });
+
+            // Filter messages (only if in chat mode)
+            messages.forEach(message => {
+                if (message.textContent.toLowerCase().includes(searchQuery)) {
+                    message.style.display = "block";
+                } else {
+                    message.style.display = "none";
+                }
+            });
+        }
+    </script>
 </head>
 <body>
     <div class="chat-container">
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search users or messages..." onkeyup="searchChat()">
+        </div>
+
         <!-- User List -->
         <div class="user-list">
             <h3>Your Chats</h3>
             <?php while ($user = mysqli_fetch_assoc($user_result)) { ?>
-                <a href="chat.php?user_id=<?php echo $user['id']; ?>"><?php echo htmlspecialchars($user['name']); ?></a>
+                <a href="chat.php?user_id=<?php echo $user['id']; ?>" class="user-link">
+                    <?php echo htmlspecialchars($user['name']); ?>
+                </a>
             <?php } ?>
         </div>
 
