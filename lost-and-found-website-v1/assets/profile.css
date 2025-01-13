@@ -1,0 +1,205 @@
+
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Light grey background */
+}
+
+h3 {
+    font-size: 24px; /* Subsection headings */
+    text-align: center;
+    margin-top: 10px;
+    color: #14171a; /* Dark color for headings */
+}
+
+h4 {
+    font-size: 1.2em; /* Titles inside item cards */
+    margin-bottom: 10px;
+    color: #14171a;
+}
+
+/* Paragraphs */
+p {
+    font-size: 14px; /* Regular text inside item cards */
+    margin: 5px 0;
+    color: #657786; /* Lighter text color for descriptions */
+}
+/* Body Centering */
+body {
+    display: flex;
+    flex-direction: column; /* Ensure child elements stack vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: flex-start; /* Align the content at the top */
+    height: 100vh; /* Ensure it takes the full viewport height */
+    margin: 0; /* Remove default margin */
+    background-color: #f4f4f4; /* Light Grey Background */
+}
+
+/* Main Container */
+.container {
+    width: 98%; /* Adjust content width */
+    max-width: 98%; /* Optional: set a maximum width for large screens */
+    padding: 20px;
+    background-color: transparent; /* White Background */
+    border-radius: 10px; /* Optional: rounded corners */
+
+   
+}
+
+/* Section Title */
+.section-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: #14171a; /* Dark Grey/Black */
+}
+
+/* Items Section */
+.items-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Individual Item Card */
+.item-card {
+    background: #ffffff; /* White Background */
+    border: 1px solid #e1e8ed; /* Light Grey/Blue Border */
+    border-radius: 12px;
+    padding: 20px;
+    text-align: left;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Item Card Hover Effect */
+.item-card:hover {
+    background: #f0f4f8; /* Slightly darker hover effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Stronger shadow on hover */
+}
+
+/* Item Image */
+.item-card img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Item Title */
+.item-card h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #14171a; /* Dark Grey/Black */
+}
+
+/* Item Description */
+.item-card p {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #657786; /* Muted Grey */
+}
+
+/* Item Location & Type */
+.item-card .meta-info {
+    font-size: 13px;
+    color: #aab8c2;
+    margin-bottom: 10px;
+}
+
+/* Item Actions */
+.item-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+/* Buttons */
+.btn {
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-edit {
+    background-color: #1da1f2; /* Twitter Blue */
+    color: white;
+}
+
+.btn-edit:hover {
+    background-color: #1A4B8A; /* Dark Blue for hover effect */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.btn-delete {
+    background-color: #e0245e; /* Red for delete */
+    color: white;
+}
+
+.btn-delete:hover {
+    background-color: #c21b4c;
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Status Styles */
+.status {
+    padding: 4px 8px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+    text-transform: capitalize;
+    margin-top: 5px;
+}
+
+/* Found Status */
+.status.found {
+    background-color: #e6ffed; /* Soft Green */
+    color: #1f7a1f; /* Dark Green for text */
+    border: 1px solid #b2e8b2; /* Pale Green Border */
+}
+
+/* Claimed Status */
+.status.claimed {
+    background-color: #fff8e1; /* Soft Yellow */
+    color: #a68500; /* Dark Yellow Text */
+    border: 1px solid #ffe59a;
+}
+
+/* Lost Status */
+.status.lost {
+    background-color: #ffe6e6; /* Light Red */
+    color: #a72e2e; /* Dark Red for text */
+    border: 1px solid #ffb3b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .item-card {
+        padding: 10px;
+    }
+
+    .item-card h3 {
+        font-size: 16px;
+    }
+
+    .btn {
+        padding: 4px 10px;
+        font-size: 12px;
+    }
+}

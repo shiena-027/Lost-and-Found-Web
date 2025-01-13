@@ -1,0 +1,97 @@
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4; /* Light grey background for contrast */
+    color: #333; /* Dark grey for text */
+}
+
+h2 {
+    text-align: center;
+    color: #14171a; /* Dark color for headings */
+}
+
+form {
+    max-width: 95%; /* Adjust to your preferred width */
+    width: 100%; /* Ensure the form takes up the full width up to max-width */
+    margin: 20px auto; /* Centers the form horizontally */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff; /* White for clarity */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Labels */
+label {
+    display: block;
+    font-weight: bold;
+    color: #14171a; /* Highlighted blue for labels */
+}
+
+/* Input and Textarea Styling */
+input[type="text"],
+textarea,
+select,
+input[type="file"] {
+    width: 98%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    font-size: 16px;
+}
+
+/* Focus Effect for Inputs, Textareas, Select, File Inputs */
+input[type="text"]:focus,
+textarea:focus,
+select:focus,
+input[type="file"]:focus {
+    outline: none;
+    border-color: #4b84ff; /* Main blue focus effect */
+    box-shadow: 0 0 5px rgba(75, 132, 255, 0.3);
+}
+
+/* Button Styling */
+button {
+    background-color: #4b84ff; /* Main blue */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button Hover Effect */
+button:hover {
+    background-color: #296dff; /* Highlighted blue */
+}
+
+/* Map Container */
+#map {
+    height: 400px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-top: 10px;
+    z-index: 1; 
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    form {
+        padding: 15px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+
+    /* Ensure map does not overlap navbar */
+    #map {
+        margin-top: 20px;
+    }
+}

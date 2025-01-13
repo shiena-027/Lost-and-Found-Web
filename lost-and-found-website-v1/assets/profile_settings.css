@@ -1,0 +1,141 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+h2 {
+    text-align: center;
+    margin-top: 30px;
+    color: #14171a;  /* Dark color for headings */
+}
+form {
+    max-width: 500px;
+    margin: 10px auto;
+    
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #14171a;
+    font-size: 24px;
+}
+
+/* Profile Picture */
+form img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Labels and Inputs */
+form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #14171a;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="file"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus,
+form input[type="file"]:focus {
+    border-color: #1da1f2;
+    outline: none;
+}
+
+/* Buttons */
+form .button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+form .button-row {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+form button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #1da1f2;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+form button[type="submit"]:hover {
+    background-color: #1A4B8A;
+}
+
+/* Cancel Button */
+form button[name="cancel"] {
+    background-color: #e1e8ed;
+    color: #14171a;
+}
+
+form button[name="cancel"]:hover {
+    background-color: #cdd9e5;
+}
+
+/* Forgot Password Link */
+form .forgot-password-link {
+    display: block;
+    margin-top: 15px;
+    font-size: 14px;
+    text-align: center;
+    color: #1da1f2;
+    text-decoration: none;
+}
+
+form .forgot-password-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    form {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    form img {
+        width: 100px;
+        height: 100px;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="password"],
+    form input[type="file"] {
+        width: 100%;
+    }
+}
