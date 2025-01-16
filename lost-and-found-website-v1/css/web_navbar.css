@@ -4,9 +4,6 @@ nav {
 
 /* Styles for web */
 @media (min-width: 768px) {
-    h2 {
-        display: none;
-    }
 
     /* Navbar Styles */
     .navbar {

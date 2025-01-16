@@ -1,7 +1,11 @@
-<?php session_start(); ?>
 <?php
-include 'web_navbar.php';
-
+session_start();
+include('includes/db.php');
+if (!isset($_SESSION['user'])) {
+    include('navbar.php');
+}else{
+    include('web_navbar.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -65,10 +69,7 @@ include 'web_navbar.php';
 
 </body>
 
-<?php
-include 'assets/footer.php';
-
-?>
+<?php include 'assets/footer.php';?>
 
 
 

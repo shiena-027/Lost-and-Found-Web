@@ -1,6 +1,12 @@
-<?php session_start(); ?>
-<?php include('web_navbar.php');?>
-
+<?php
+session_start();
+include('includes/db.php');
+if (!isset($_SESSION['user'])) {
+    include('navbar.php');
+}else{
+    include('web_navbar.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

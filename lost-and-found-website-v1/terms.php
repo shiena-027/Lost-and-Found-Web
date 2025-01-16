@@ -2,23 +2,30 @@
 <?php
 session_start();
 include('includes/db.php');
+if (!isset($_SESSION['user'])) {
+    include('navbar.php');
+}else{
+    include('web_navbar.php');
+}
 
+/*
 // Ensure the user is logged in
 if (!isset($_SESSION['user'])) {
     header('Location: auth.php');
     exit();
 }
 
-$user = $_SESSION['user']; // Get user ID from session
 
+
+$user = $_SESSION['user']; // Get user ID from session
 // Fetch user information from the database (optional)
 $query = "SELECT * FROM users WHERE id = '$user'";
 $result = mysqli_query($conn, $query);
 $user = mysqli_fetch_assoc($result);
-?>
+
 <?php include('web_navbar.php');?>
-
-
+*/
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -89,5 +96,6 @@ $user = mysqli_fetch_assoc($result);
     <p>These terms and conditions are governed by and construed in accordance with the laws of [Your Country/Region]. Any disputes arising out of or related to these terms shall be subject to the exclusive jurisdiction of the courts in [Your Country/Region].</p>
 </section>
     </div>
+
 </body>
 </html>
