@@ -121,10 +121,23 @@ if (isset($_POST['submit'])) {
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" href="assets/forms.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        #post{
+            color:#4b84ff;
+            background-color: white;
+            border-radius: 8px;
+        }
+        #post:hover{
+            color:white;
+            background-color: #296dff;
+            border-radius: 8px;
+        }
+    </style>
+
 </head>
+
 <body>
 <?php include('web_navbar.php'); ?>
-<?php include('sidenav.php'); ?>
 <main class="form-container">
     <form action="post_item.php" method="POST" enctype="multipart/form-data">
         <label for="title">Title:</label>

@@ -47,12 +47,22 @@ $items_result = mysqli_query($conn, $search_query);
     <link rel="stylesheet" href="assets/search.css">
     <link rel="stylesheet" href="assets/no_message.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        #search{
+            color:#4b84ff;
+            background-color: white;
+            border-radius: 8px;
+        }
+        #search:hover{
+            color:white;
+            background-color: #296dff;
+            border-radius: 8px;
+        }
+    </style>
 </head>
+
 <body>
-<?php include('web_navbar.php');
-include 'navbar.php'; 
-include 'sidenav.php'; 
-?>
+<?php include('web_navbar.php');?>
 <h2>Search</h2>
 
 <form action="search.php" method="GET">

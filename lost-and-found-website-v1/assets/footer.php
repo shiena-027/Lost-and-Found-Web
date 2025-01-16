@@ -34,8 +34,11 @@ footer {
 
 /* Footer Container */
 .footer-container {
-    max-width: 1200px;
+    width: 1500px;
     margin: 0 auto;
+    background-color: #e0e0e0;
+    padding-top: 20px;
+    padding-bottom: 15px;
 }
 
 /* Contact Information */

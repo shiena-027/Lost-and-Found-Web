@@ -28,10 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
-<?php include('web_navbar.php');
-include 'navbar.php'; 
-include 'sidenav.php'; 
-?>
+<?php include('web_navbar.php');?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

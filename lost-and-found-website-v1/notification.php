@@ -22,10 +22,6 @@ $stmt->bind_param("i", $user_id);
 $stmt->execute();
 $result = $stmt->get_result();
 ?>
-<?php
-include 'navbar.php'; 
-include 'sidenav.php'; 
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +32,20 @@ include 'sidenav.php';
     <link rel="stylesheet" href="assets/notification.css">
     <link rel="stylesheet" href="assets/no_message.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        #notif{
+            color:#4b84ff;
+            background-color: white;
+            border-radius: 8px;
+        }
+        #notif:hover{
+            color:white;
+            background-color: #296dff;
+            border-radius: 8px;
+        }
+    </style>
 </head>
+
 <body>
 <?php include('web_navbar.php'); ?>
     <div class="container">

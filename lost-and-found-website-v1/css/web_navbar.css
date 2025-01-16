@@ -1,0 +1,205 @@
+nav {
+    display: none;
+}
+
+/* Styles for web */
+@media (min-width: 768px) {
+    h2 {
+        display: none;
+    }
+
+    /* Navbar Styles */
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #4b84ff;
+        padding: 10px 20px;
+        top: 0;
+        z-index: 1000;
+        /* Ensure it stays on top of other content */
+        width: 100%;
+        position: fixed;
+        /* Fixed position for the navbar */
+        left: 0;
+        right: 0;
+        box-sizing: border-box;
+        /* Prevents padding from affecting width */
+    }
+
+
+    body {
+        padding-top: 50px;
+        /* Adjust according to your navbar height */
+    }
+
+
+    /* Left side - Home Icon */
+    .navbar-left {
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar-link {
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 15px;
+        padding: 8px 15px;
+        transition: background-color 0.3s ease;
+    }
+
+    .navbar-link:hover {
+        background-color: #296dff;
+        /* Highlighted color */
+        border-radius: 8px;
+    }
+
+    /* Center - Navbar Links */
+    .navbar-center {
+        flex-grow: 1;
+        text-align: center;
+    }
+
+    .navbar-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .navbar-links li {
+        margin: 0 15px;
+    }
+
+    .navbar-link.active {
+        background-color: #296dff;
+        color: #ffffff;
+        border-radius: 8px;
+    }
+
+    /* Right side - Settings Icon and Dropdown */
+    .navbar-right {
+        display: flex;
+        align-items: center;
+    }
+
+    .dropdown {
+        position: relative;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 30px;
+        right: 0;
+        background-color: #ffffff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        min-width: 150px;
+    }
+
+    .dropdown-content a {
+        color: #14171a;
+        padding: 10px 15px;
+        text-decoration: none;
+        display: block;
+        font-size: 14px;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #e8f5fe;
+        color: #1da1f2;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    
+
+    .sidenav {
+        height: 100%;
+        /* 100% Full-height */
+        width: 0;
+        /* 0 width - change this with JavaScript */
+        position: fixed;
+        /* Stay in place */
+        z-index: 1;
+        /* Stay on top */
+        top: 0;
+        left: 0;
+        background-color: #ffffff;
+        /* Black*/
+        overflow-x: hidden;
+        /* Disable horizontal scroll */
+        padding-top: 60px;
+        /* Place content 60px from the top */
+        transition: 0.5s;
+        /* 0.5 second transition effect to slide in the sidenav */
+        overflow: hidden;
+    }
+
+    /* The navigation menu links */
+    .sidenav a {
+        padding: 8px 32px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: rgb(0, 0, 0);
+        display: block;
+        transition: 0.3s;
+        font-weight: bold;
+    }
+    .sidenav .sidehead{
+        box-shadow: 0px 0px 0px 3px #14171a;
+        margin-bottom: 7px;
+    }
+    .sidenav .sidecon{
+        width: 200px;
+        font-size: 15px;
+        margin-left: 15px;
+    }
+    .sidecon a{
+        font-size: 18px;
+        font-weight: 100;
+    }
+    .sidecon a:hover{
+        color: #296dff;
+        border-radius: 8px;
+        background-color: #e8f5fe;
+    }
+
+
+    .sidenav ul{
+        list-style: none;
+    }
+
+    .sidenav img {
+        padding-right: 5px;
+        transition: 0.3s;
+    }
+
+    /* Position and style the close button (top right corner) */
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+        padding: 0;
+    }
+   
+
+    .logout a {
+        bottom: 0;
+        text-align: right;
+        margin-top: 90%;
+        padding: 10px;
+        padding-right: 20px;
+    }
+    .logout a:hover {
+        color: #1da1f2;
+    }
+
+
+}

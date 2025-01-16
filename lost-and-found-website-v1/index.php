@@ -1,78 +1,78 @@
 <?php session_start(); ?>
-<?php 
-include('web_navbar.php');
-include 'navbar.php'; 
-include 'sidenav.php'; 
-?>
+
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Lost & Found Platform</title>
-    <link rel="stylesheet" href="assets/style.css">
-    <style>
-        .profile-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 20px 0;
-        }
-
-        .profile {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 80%;
-            margin: 20px 0;
-            padding: 15px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            background-color: #f9f9f9;
-        }
-
-        .profile img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .profile-info {
-            flex: 1;
-            margin: 0 20px;
-        }
-
-        .profile:nth-child(odd) .profile-img {
-            order: 1;
-        }
-
-        .profile:nth-child(odd) .profile-info {
-            order: 2;
-            text-align: right;
-        }
-
-        .profile:nth-child(even) .profile-img {
-            order: 2;
-        }
-
-        .profile:nth-child(even) .profile-info {
-            order: 1;
-            text-align: left;
-        }
-    </style>
+    <link rel="stylesheet" href="css/index.css">
 </head>
-<body>
-    <h1>Welcome to the Lost & Found Platform</h1>
-    <p>Your go-to platform for finding lost or found items.</p>
-    <nav>
-        <a href="faq.php">FAQ</a>
-        <a href="about.php">About Us</a>
-        <a href="contact.php">Contact</a>
-        <a href="auth.php">Login</a>
-    </nav>
 
+<body>
+    <div class="maincontainer">
+        <div>
+            <span class="maintitle">Welcome to Lost & Found Platform!</span></br>
+            <span class="mainsub">Your go-to platform for finding lost items.</span><br>
+            <button><a href="auth.php">Come Join Us!</a></button>
+        </div>
+    </div>
+    <div class="desccontain">
+        <h2 class="desctitle">You Found Us!</h2>
+        <p class="desctext">
+            Welcome to LnF, the trusted platform designed to help reunite lost items with their rightful
+            owners. Whether you've misplaced a personal item, found something that isn't yours, or are searching for
+            a lost pet, our easy-to-use website makes it simple to report, search, and claim lost belongings. With a
+            user-friendly interface and a secure system for posting details and images, we connect you with others
+            in your community to help recover what's important. Start your search or report a found item today, and
+            let us help you reconnect with what you've lost!
+        </p>
+    </div>
+    <div class="desccontain">
+        <h2>Post a lost item</h2>
+        <p>
+            Welcome to LnF, the trusted platform designed to help reunite lost items with their rightful
+            owners. Whether you've misplaced a personal item, found something that isn't yours, or are searching for
+            a lost pet, our easy-to-use website makes it simple to report, search, and claim lost belongings. With a
+            user-friendly interface and a secure system for posting details and images, we connect you with others
+            in your community to help recover what's important. Start your search or report a found item today, and
+            let us help you reconnect with what you've lost!
+        </p>
+    </div>
+    <div class="desccontain">
+        <h2>Find lost items</h2>
+        <p>
+            Welcome to LnF, the trusted platform designed to help reunite lost items with their rightful
+            owners. Whether you've misplaced a personal item, found something that isn't yours, or are searching for
+            a lost pet, our easy-to-use website makes it simple to report, search, and claim lost belongings. With a
+            user-friendly interface and a secure system for posting details and images, we connect you with others
+            in your community to help recover what's important. Start your search or report a found item today, and
+            let us help you reconnect with what you've lost!
+        </p>
+    </div>
+    <div class="desccontain">
+        <h2>Talk about the lost item</h2>
+        <p>
+            Welcome to LnF, the trusted platform designed to help reunite lost items with their rightful
+            owners. Whether you've misplaced a personal item, found something that isn't yours, or are searching for
+            a lost pet, our easy-to-use website makes it simple to report, search, and claim lost belongings. With a
+            user-friendly interface and a secure system for posting details and images, we connect you with others
+            in your community to help recover what's important. Start your search or report a found item today, and
+            let us help you reconnect with what you've lost!
+        </p>
+    </div>
+    <div class="desccontain">
+        <h2>Find whats lost in your area</h2>
+        <p>
+            Welcome to LnF, the trusted platform designed to help reunite lost items with their rightful
+            owners. Whether you've misplaced a personal item, found something that isn't yours, or are searching for
+            a lost pet, our easy-to-use website makes it simple to report, search, and claim lost belongings. With a
+            user-friendly interface and a secure system for posting details and images, we connect you with others
+            in your community to help recover what's important. Start your search or report a found item today, and
+            let us help you reconnect with what you've lost!
+        </p>
+    </div>
     <div class="profile-container">
         <div class="profile">
             <div class="profile-img">
@@ -100,10 +100,11 @@ include 'sidenav.php';
             </div>
             <div class="profile-info">
                 <p><strong>Name:</strong> Shiena Mae Miranda</p>
-                <p><strong>Nickname:</strong> "Mai<3"</p>
-                <p><strong>Email:</strong> mirandamimai984@gmail.com</p>
+                <p><strong>Nickname:</strong> "Mai<3"< /p>
+                        <p><strong>Email:</strong> mirandamimai984@gmail.com</p>
             </div>
         </div>
     </div>
 </body>
+
 </html>

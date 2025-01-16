@@ -68,10 +68,7 @@ if (isset($_GET['user_id'])) {
     }
 }
 ?>
-<?php
-include 'navbar.php'; 
-include 'sidenav.php'; 
-?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -81,7 +78,18 @@ include 'sidenav.php';
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="assets/chat.css">
     <title>Chat</title>
-    
+    <style>
+        #chat{
+            color:#4b84ff;
+            background-color: white;
+            border-radius: 8px;
+        }
+        #chat:hover{
+            color:white;
+            background-color: #296dff;
+            border-radius: 8px;
+        }
+    </style>
 </head>
 <?php include('web_navbar.php'); ?>   
 <body>

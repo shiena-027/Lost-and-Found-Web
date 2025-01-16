@@ -1,8 +1,5 @@
 <?php session_start(); ?>
-<?php include('web_navbar.php');
-include 'navbar.php'; 
-include 'sidenav.php'; 
-?>
+<?php include('web_navbar.php');?>
 
 <!DOCTYPE html>
 <html lang="en">
