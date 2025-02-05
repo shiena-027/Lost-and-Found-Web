@@ -1,0 +1,126 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 20px;
+    color: #14171a;  /* Dark color for headings */
+}
+
+.container {
+    max-width: 100%;
+    margin-left: calc((100% - 98%) / 2); /* Center based on 90% width */
+    margin-right: calc((100% - 98%) / 2);
+    padding: 20px;
+}
+.notification-item:hover {
+    background: #f0f4f8; /* Slightly darker background */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+/* Notification List Styles */
+.notification-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.notification-item {
+    background-color: #ffffff;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.notification-header {
+    font-weight: bold;
+    color: #14171a;
+    text-decoration: none;
+}
+
+.notification-header:hover {
+    color: #1da1f2; /* Highlight links with blue on hover */
+}
+
+.notification-date {
+    font-size: 0.9rem;
+    color: #888888;
+    margin-top: 5px;
+}
+
+.new-notification {
+    font-size: 0.9rem;
+    color: #1da1f2;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.notification-item a {
+    color: #14171a;
+}
+
+.notification-item a.mark-read-btn {
+    color: #1da1f2;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.notification-item a.mark-read-btn:hover {
+    color: #14171a;
+}
+
+/* Mark Read Button Styling */
+.notification-item.mark-read {
+    background-color: #e1e8ed; /* Light gray background for read notifications */
+}
+
+.notification-item.mark-read .mark-read-btn {
+    color: black; /* Black for the button text */
+}
+
+.notification-item.mark-read .mark-read-btn:hover {
+    color: #888888; /* Darker gray when hovered */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        padding: 20px;
+    }
+}
+
+/* Mobile Version Styles */
+@media (max-width: 600px) {
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .notification-item {
+        padding: 10px;
+    }
+
+    .notification-date {
+        font-size: 0.8rem;
+    }
+}
+/* Style for the notification dot */
+.notification-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: red;
+    border: 2px solid white; /* Optional: To make the dot more prominent */
+    margin-top: -5px; /* Moves the dot upward slightly */
+    margin-left: 5px; /* Moves the dot to the right slightly */
+}

@@ -1,0 +1,523 @@
+/* Base Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* Swiper Container */
+.swiper-container {
+  width: 100%;
+  max-height: 450px;
+  padding: 0;
+  position: relative;
+  background-color: white;
+  overflow: hidden; /* Prevent overflow */
+  
+}
+
+/* Swiper Slide - Responsive Sizing */
+.swiper-slide {
+  width: 100%; /* Slightly smaller for mobile */
+  height: 500px; /* Match item card height */
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.swiper-slide:hover {
+  transform: translateY(-3px);
+}
+
+/* Items Wrapper */
+.items {
+  background-color: white;
+  margin: 0 auto;
+  max-width: 100%;
+  border: 1px solid #ddd;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  box-sizing: border-box;
+  
+}
+
+/* Item Card */
+.item-card {
+  padding: 12px;
+  border-radius: 8px;
+  background: white;
+  max-height: 500px;
+  height: 500px;
+
+}
+
+/* Mobile version */
+@media (max-width: 768px) {
+  .item-card {
+      width: 100%; /* Full width for mobile */
+      height: auto; /* Adjust height to content */
+      max-height: 400px; /* Limit max-height on mobile */
+  }
+}
+
+
+
+.item-img {
+    width: auto; 
+    max-width: 100%; 
+    height: 160px; 
+    object-fit: cover; 
+    display: block; 
+    margin: 0 auto; 
+}
+
+
+.item-title {
+  color: #14171a; /* Darker blue color */
+  font-size: 1.25rem; /* Adjust size as needed */
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  max-width: 80%; /* Prevents text from taking too much space */
+  margin-top: 10; 
+  padding: 0; 
+}
+
+.item-title:hover {
+  text-decoration: underline; /* Underlines on hover */
+}
+
+.item-description {
+  color: #657786; /* Darker gray for description text */
+  font-size: 1rem;
+  line-height: 1.5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  max-width: 100%; /* Prevents description from overflowing */
+  margin: 0; 
+  padding: 0; 
+}
+
+.item-description:hover {
+  color: #1da1f2; /* Hover effect to change text color */
+}
+
+.item-location .item-description {
+    display: flex;
+    align-items: center;
+    max-width: 100%; /* Adjust based on layout */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.item-location i {
+    margin-right: 5px; /* Add space between icon and text */
+    color: #256EBB;
+}
+
+.item-location a {
+    color: #1da1f2;
+    text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    max-width: 80%; /* Prevents text from taking too much space */
+}
+.item-location a:hover {
+    text-decoration: underline;
+}
+
+/* Item Time */
+.item-time {
+    font-size: 12px;
+    color: #777;
+}
+
+/* View More Button */
+.view-more-container {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.view-more-btn {
+    display: inline-block;
+    background: #256EBB;
+    color: white;
+    padding: 9px 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.3s;
+    margin-bottom: 20px;
+}
+
+.view-more-btn:hover {
+    background: #1d5a9b;
+}
+
+@media (max-width: 768px) {
+    .swiper-container {
+        max-height: 400px;
+        max-width: 100%;
+    }
+
+    .swiper-slide {
+        width: 100%; 
+        height: auto; 
+    }
+
+    .items {
+        max-width: 100%;
+    }
+
+    .profile-img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .item-title {
+        font-size: 14px;
+    }
+
+    .item-description {
+        font-size: 12px;
+    }
+
+    .chat-link,
+    .view-more-btn {
+        font-size: 14px;
+        padding: 7px 15px;
+    }
+
+
+}
+/* General Styles */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 100%;
+    margin: 0 auto;
+    background: #f4f4f4;
+}
+
+/* Individual Stat Card */
+.stat {
+   width: 100%;
+    color: black;
+    text-align: center;
+    padding: 20px;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Headings */
+.stat h3 {
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+/* Icons */
+.stat p i {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+/* Numbers */
+.stat p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+/* Links */
+.stat a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .stats {
+        grid-template-columns: 1fr;
+    }
+}
+.stat-gif {
+    width: 100px; /* Adjust size */
+    height: auto;
+    display: block;
+    margin: 0 auto 10px; /* Centers the GIF */
+    
+}
+
+/* Hide the radio input for style purposes */
+input[type=radio] {
+  display: none;
+}
+
+/* Container Styles */
+.container {
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f0f0f0; /* Container background color */
+}
+
+/* Card Styles */
+.card {
+  position: absolute;
+  width: 300px;
+  height: 400px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transition: transform .4s ease;
+  cursor: pointer;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Mobile Specific Adjustments for .container and .card */
+@media (max-width: 768px) {
+  /* Adjust only for specific container and card on mobile */
+  .container {
+    padding: 20px; /* Add padding if needed */
+  }
+
+  .card {
+    width: 90%; /* Make the card responsive */
+    height: auto; /* Allow height to adjust based on content */
+    padding: 15px; /* Adjust padding if needed */
+  }
+}
+
+
+/* Confession Styles */
+.confession h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #403d40;
+}
+
+.confession p {
+  font-size: 16px;
+  color: #636363;
+  text-align: center;
+}
+
+/* Cards Container */
+.cards {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 20px;
+}
+
+/* Song Transition Effects */
+#item-1:checked ~ .cards #song-3, #item-2:checked ~ .cards #song-1, #item-3:checked ~ .cards #song-2 {
+  transform: translatex(-40%) scale(.8);
+  opacity: .4;
+  z-index: 0;
+}
+
+#item-1:checked ~ .cards #song-2, #item-2:checked ~ .cards #song-3, #item-3:checked ~ .cards #song-1 {
+  transform: translatex(40%) scale(.8);
+  opacity: .4;
+  z-index: 0;
+}
+
+#item-1:checked ~ .cards #song-1, #item-2:checked ~ .cards #song-2, #item-3:checked ~ .cards #song-3 {
+  transform: translatex(0) scale(1);
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Player Styles */
+.player {
+  background-color: #fff;
+  border-radius: 8px;
+  min-width: 320px;
+  padding: 16px 10px;
+}
+
+.upper-part {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  height: 36px;
+  overflow: hidden;
+}
+
+.song-info {
+  width: calc(100% - 32px);
+  display: block;
+}
+
+.song-info .title {
+  color: #403d40;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+/* Subtitle and Time */
+.sub-line {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.subtitle, .time {
+  font-size: 12px;
+  line-height: 16px;
+  color: #c6c5c6;
+}
+
+.time {
+  font-size: 12px;
+  line-height: 16px;
+  color: #a5a5a5;
+  font-weight: 500;
+  margin-left: auto;
+}
+
+/* Progress Bar */
+.progress-bar {
+  height: 3px;
+  width: 100%;
+  background-color: #e9efff;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress {
+  display: block;
+  position: relative;
+  width: 60%;
+  height: 100%;
+  background-color: #2992dc;
+  border-radius: 6px;
+}
+
+/* Info Area */
+.info-area {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 30px;
+  transition: transform .4s ease-in;
+}
+
+/* Info Transition Effects */
+#item-2:checked ~ .player #test {
+  transform: translateY(0);
+}
+
+#item-2:checked ~ .player #test  {
+  transform: translateY(-40px);
+}
+
+#item-3:checked ~ .player #test  {
+  transform: translateY(-80px);
+}
+
+/* Status Container */
+.status-container {
+  display: flex;
+  justify-content: space-between; /* Place items on opposite sides */
+  align-items: center; /* Vertically center the items */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  /* Adjust container width for mobile */
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  /* Adjust card layout for smaller screens */
+  .card {
+    width: 90%;
+    height: auto; /* Allow the card to adjust based on content */
+    padding: 15px;
+    margin: auto;
+  }
+
+  /* Player width adjustment */
+  .player {
+    width: 100%;
+    min-width: 300px; /* Ensure it's still responsive */
+  }
+
+  /* Song Title Adjustments */
+  .song-info .title {
+    font-size: 16px;
+  }
+
+  /* Subtitle and Time Adjustments */
+  .subtitle, .time {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  /* Progress Bar Adjustments */
+  .progress-bar {
+    height: 4px;
+    width: 100%;
+  }
+
+  .progress {
+    height: 100%;
+    width: 60%;
+  }
+
+  /* Upper part adjustment */
+  .upper-part {
+    flex-direction: column; /* Stack elements in column for small screens */
+    height: auto;
+    margin-bottom: 12px;
+  }
+
+  .sub-line {
+    flex-direction: column;
+    align-items: flex-start; /* Stack elements */
+  }
+
+  /* Info Area Transition */
+  .info-area {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+}

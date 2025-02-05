@@ -1,0 +1,208 @@
+nav {
+    display: none;
+}
+
+/* Styles for web */
+@media (min-width: 768px) {
+    h2 {
+        display: none;
+    }
+
+    /* Navbar Styles */
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: linear-gradient(135deg, #4b84ff, #296dff); /* Gradient background */
+        padding: 10px 20px;
+        top: 0;
+        z-index: 1000;
+        width: 100%;
+        position: fixed;
+        left: 0;
+        right: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        padding-top: 50px;
+    }
+
+    /* Left side - Home Icon */
+    .navbar-left {
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar-link {
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 15px;
+        padding: 8px 15px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .navbar-link:hover {
+        background-color: #296dff;
+        border-radius: 8px;
+        transform: translateY(-2px); /* Slightly lift the element */
+    }
+
+    /* Center - Navbar Links */
+    .navbar-center {
+        flex-grow: 1;
+        text-align: center;
+    }
+
+    .navbar-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .navbar-links li {
+        margin: 0 15px;
+    }
+    .navbar-link.active {
+        background-color: #ffffff; /* Active background color */
+        color: #296dff;/* Active text color */
+        border-radius: 8px; /* Optional: rounded edges */
+    }
+    
+
+    /* Right side - Settings Icon and Dropdown */
+    .navbar-right {
+        display: flex;
+        align-items: center;
+    }
+
+    .dropdown {
+        position: relative;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 30px;
+        right: 0;
+        background-color: #ffffff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        min-width: 150px;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    .dropdown-content a {
+        color: #14171a;
+        padding: 10px 15px;
+        text-decoration: none;
+        display: block;
+        font-size: 14px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #e8f5fe;
+        color: #1da1f2;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Side Navigation */
+    .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #ffffff;
+        overflow-x: hidden;
+        padding-top: 60px;
+        transition: 0.5s ease;
+    }
+
+    .sidenav a {
+        padding: 8px 32px;
+        text-decoration: none;
+        font-size: 18px;
+        color: rgb(0, 0, 0);
+        display: block;
+        transition: 0.3s;
+    }
+
+    .sidenav .sidehead {
+        margin-bottom: 40px;
+    }
+
+    .sidenav .sidecon a:hover {
+        color: #296dff;
+        border-radius: 8px;
+        background-color: #e8f5fe;
+        transform: translateX(10px); /* Subtle hover movement */
+    }
+
+    .profile-photo {
+        padding: 0 auto;
+        transition: 0.3s;
+        height: 90px;
+        width: 90px;
+        border-radius: 50%;
+        background-size: cover; /* Ensures the image fits properly */
+        background-position: center;
+        border: 3px solid #ffffff; /* White border to make it stand out */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Shadow effect */
+        display: block; /* Makes it easier to center */
+        margin: 0 auto; /* Horizontally centers the image */
+    }
+    
+
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+        padding: 0;
+    }
+
+    .logout a {
+        display: block; /* Makes the entire padding area clickable */
+        text-align: right;
+        margin-top: 80%;
+        padding: 10px;
+        padding-right: 20px;
+        color: #000; /* Default text color */
+        text-decoration: none; /* Removes underline */
+    }
+    
+    .logout a:hover {
+        color: #1da1f2; /* Changes text color on hover */
+        background-color: rgba(29, 161, 242, 0.1); /* Optional: Adds a background hover effect */
+        border-radius: 5px; /* Optional: Rounds corners for better aesthetics */
+    }
+    
+
+    h3.user-name {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #14171a;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease, transform 0.3s ease;
+    }
+
+    h3.user-name:hover {
+        color: #1da1f2;
+        text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
+        transform: scale(1.02); /* Slightly increase size */
+    }
+}
